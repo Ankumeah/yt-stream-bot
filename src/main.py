@@ -11,7 +11,7 @@ import os
 import json
 
 VIDEO_ID = os.environ.get("VIDEO_ID")
-if no VIDEO_ID:
+if not VIDEO_ID:
   print("Pls set the VIDEO_ID env var")
   sys.exit(1)
 
@@ -97,7 +97,9 @@ def main():
       
     next_page_token = r.get("nextPageToken", "")
 
-    joined = True
+    if not joined:
+      send_message(live_chat_id, "I have joined the chat!")
+      joined = True
 
     try:
       time.sleep(r.get("pollingIntervalMillis", 1000) / 1000)
