@@ -9,6 +9,9 @@ import sys
 import random
 import os
 import json
+import threading
+import http.server
+import socketserver
 
 VIDEO_ID = os.environ.get("VIDEO_ID")
 if not VIDEO_ID:
@@ -124,5 +127,14 @@ def gamble():
   rand = random.randint(0, 101)
   return rand % 2
 
+def run_server():
+  port = int(os.environ.get("PORT", 8080))
+  Handler = http.server.SimpleHTTPRequestHandler
+  with socketserver.TCPServer(("", port), Handler) as httpd:
+    print(f"Dummy server running at port {port}")
+    httpd.serve_forever()
+
 if __name__ == "__main__":
-  main()
+  threading.Thread(target=main, daemon=True).start()
+  run_server()
+
