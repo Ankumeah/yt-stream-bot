@@ -108,13 +108,17 @@ def main():
       sys.exit(0)
 
 def handel_command(live_chat_id: str, username: str, message: str):
-  if message == "!test":
-    send_message(live_chat_id, f"{username} has tested!")
+  if message == "!goon":
+    send_message(live_chat_id, f"{username} has gooned!")
+  elif message == "!jork":
+    send_message(live_chat_id, f"Jarvis jorked {username}'s a little'")
   elif message == "!gamble":
     if gamble():
       send_message(live_chat_id, f"{username} has won the gamble!")
     else:
       send_message(live_chat_id, f"{username} sux")
+  elif message == "!test":
+    send_message(live_chat_id, f"Test passed")
 
 def gamble():
   rand = random.randint(0, 101)
