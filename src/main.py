@@ -10,7 +10,10 @@ import random
 import os
 import json
 
-VIDEO_ID = input("Enter Stream ID: ")
+VIDEO_ID = os.environ.get("VIDEO_ID")
+if no VIDEO_ID:
+  print("Pls set the VIDEO_ID env var")
+  sys.exit(1)
 
 API_KEY = os.environ.get("YOUTUBE_API_KEY")
 OAUTH_JSON = os.environ.get("YOUTUBE_OAUTH_JSON")
