@@ -10,7 +10,7 @@ import random
 import os
 import json
 
-VIDEO_ID = "7PGR5NrknpU"
+VIDEO_ID = input("Enter Stream ID: ")
 
 API_KEY = os.environ.get("YOUTUBE_API_KEY")
 OAUTH_JSON = os.environ.get("YOUTUBE_OAUTH_JSON")
