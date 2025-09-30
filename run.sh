@@ -9,7 +9,7 @@ fi
 
 cd $SCRIPT_DIR
 
-source ./.env/bin/activate
+source ./.venv/bin/activate
 
 ./src/main.py
 
