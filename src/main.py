@@ -131,8 +131,6 @@ def main():
         seen_messages.add(msg_id)
         username = item["authorDetails"]["displayName"]
 
-        print(f"\n\nmessage snippet = {item["snippet"]}\n\n")
-
         try:
           message = item["snippet"]["displayMessage"]
           chat_dict[username] = message
@@ -165,9 +163,9 @@ def handel_command(live_chat_id: str, username: str, message: str):
     send_message(live_chat_id, f"Jarvis jorked {username}'s a little")
   elif message == "!gamble":
     if gamble():
-      send_message(live_chat_id, f"{username} has won the gamble!")
+      send_message(live_chat_id, f"{username} is a level 69,420 ohio rizz sigma gyatt gigachad")
     else:
-      send_message(live_chat_id, f"{username} sux")
+      send_message(live_chat_id, f"{username} sux and has no life")
   elif message == "!test":
     send_message(live_chat_id, f"Test passed")
 
@@ -185,4 +183,3 @@ def run_server():
 if __name__ == "__main__":
   threading.Thread(target=main, daemon=True).start()
   run_server()
-
