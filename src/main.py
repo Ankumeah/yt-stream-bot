@@ -165,7 +165,7 @@ def handel_command(live_chat_id: str, username: str, message: str):
     if gamble():
       send_message(live_chat_id, f"{username} is a level 69,420 ohio rizz sigma gyatt gigachad")
     else:
-      send_message(live_chat_id, f"{username} has L rizz, hasen't showered, is a horrible gamer and no one likes them'")
+      send_message(live_chat_id, f"{username} has L rizz, hasen't showered, is a horrible gamer and no one likes them")
   elif message == "!test":
     send_message(live_chat_id, f"Test passed")
 
